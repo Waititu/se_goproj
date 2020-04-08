@@ -1,0 +1,801 @@
+I200407 07:43:45.144856 1 util/log/clog.go:1196  [config] file created at: 2020/04/07 07:43:45
+I200407 07:43:45.144856 1 util/log/clog.go:1196  [config] running on machine: Isaacs-MacBook-Air
+I200407 07:43:45.144856 1 util/log/clog.go:1196  [config] binary: CockroachDB CCL v19.2.4 (x86_64-apple-darwin14, built 2020/02/06 21:49:44, go1.12.12)
+I200407 07:43:45.144856 1 util/log/clog.go:1196  [config] arguments: [cockroach start --insecure --advertise-addr 127.0.0.1:26257]
+I200407 07:43:45.144856 1 util/log/clog.go:1196  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I200407 07:43:45.144855 1 cli/start.go:1144  logging to directory /Users/waititu/goproj/cockroach-data/logs
+W200407 07:43:45.147242 1 cli/start.go:1182  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.2/secure-a-cluster.html
+W200407 07:43:45.147533 1 cli/start.go:1052  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (2.0 GiB).
+W200407 07:43:45.147663 1 cli/start.go:1065  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (2.0 GiB).
+I200407 07:43:45.148025 1 cli/start.go:1196  CockroachDB CCL v19.2.4 (x86_64-apple-darwin14, built 2020/02/06 21:49:44, go1.12.12)
+W200407 07:43:45.253958 1 cli/start.go:511  running 'cockroach start' without --join is deprecated.
+Consider using 'cockroach start-single-node' or 'cockroach init' instead.
+I200407 07:43:45.258256 1 server/config.go:394  system total memory: 8.0 GiB
+I200407 07:43:45.258357 1 server/config.go:396  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I200407 07:43:45.258468 1 cli/start.go:1037  process identity: uid 501 euid 501 gid 20 egid 20
+I200407 07:43:45.261066 1 cli/start.go:644  starting cockroach node
+I200407 07:43:45.267443 29 storage/engine/rocksdb.go:622  opening rocksdb instance at "/Users/waititu/goproj/cockroach-data/cockroach-temp686354204"
+I200407 07:43:45.301241 29 server/server.go:928  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+W200407 07:43:45.302364 29 server/config_unix.go:112  soft open file descriptor limit 10240 is under the recommended limit 15000; this may decrease performance
+please see https://www.cockroachlabs.com/docs/v19.2/recommended-production-settings.html for more details
+I200407 07:43:45.302435 29 storage/engine/rocksdb.go:622  opening rocksdb instance at "/Users/waititu/goproj/cockroach-data"
+I200407 07:43:45.350835 29 server/config.go:502  [n?] 1 storage engine initialized
+I200407 07:43:45.350850 29 server/config.go:505  [n?] RocksDB cache size: 128 MiB
+I200407 07:43:45.350857 29 server/config.go:505  [n?] store 0: RocksDB, max size 0 B, max open file limit 9984
+I200407 07:43:45.378439 29 server/server.go:978  [n?] Sleeping till wall time 1586245425378367000 to catches up to 1586245425801157001 to ensure monotonicity. Delta: 422.790001ms
+I200407 07:43:45.803521 29 gossip/gossip.go:394  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"127.0.0.1:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:2 patch:0 unstable:0 > build_tag:"v19.2.4" started_at:1586245425803190000 cluster_name:"" sql_address:<network_field:"tcp" address_field:"127.0.0.1:26257" > 
+W200407 07:43:45.821393 141 storage/replica_range_lease.go:554  can't determine lease status due to node liveness error: node not in the liveness table
+github.com/cockroachdb/cockroach/pkg/storage.init.ializers
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/node_liveness.go:44
+runtime.main
+	/usr/local/go/src/runtime/proc.go:188
+runtime.goexit
+	/usr/local/go/src/runtime/asm_amd64.s:1337
+W200407 07:43:45.821618 141 storage/store.go:1530  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I200407 07:43:45.822785 29 server/node.go:431  [n1] initialized store [n1,s1]: disk (capacity=113 GiB, available=12 GiB, used=318 KiB, logicalBytes=298 KiB), ranges=24, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=540.00 p90=11197.00 pMax=260845.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I200407 07:43:45.823007 29 storage/stores.go:240  [n1] read 0 node addresses from persistent storage
+I200407 07:43:45.823117 29 server/node.go:645  [n1] connecting to gossip network to verify cluster ID...
+I200407 07:43:45.823141 29 server/node.go:665  [n1] node connected via gossip and verified as part of cluster "62cc39e3-7015-46ac-b414-627cadd581ab"
+I200407 07:43:45.823277 29 server/node.go:512  [n1] node=1: started with [<no-attributes>=/Users/waititu/goproj/cockroach-data] engine(s) and attributes []
+I200407 07:43:45.823535 29 server/server.go:1514  [n1] starting http server at [::]:8080 (use: 127.0.0.1:8080)
+I200407 07:43:45.823560 29 server/server.go:1521  [n1] starting grpc/postgres server at [::]:26257
+I200407 07:43:45.823589 29 server/server.go:1522  [n1] advertising CockroachDB node at 127.0.0.1:26257
+I200407 07:43:45.831758 181 storage/node_liveness.go:474  [n1,liveness-hb] heartbeat failed on epoch increment; retrying
+W200407 07:43:45.881087 256 storage/intentresolver/intent_resolver.go:519  failed to push during intent resolution: failed to push id=074c59b9 key=/Table/SystemConfigSpan/Start rw=true pri=0.01154565 stat=PENDING epo=0 ts=1586245425.865571000,0 orig=0.000000000,0 min=1586245425.865571000,0 max=0.000000000,0 wto=false seq=1
+I200407 07:43:45.883086 202 sql/event_log.go:130  [n1,intExec=add-constraints-ttl] Event: "set_zone_config", target: 25, info: {Target:TABLE system.public.replication_constraint_stats Config: Options:"gc.ttlseconds" = 600 User:root}
+I200407 07:43:45.906096 310 sql/event_log.go:130  [n1,intExec=add-replication-status-ttl] Event: "set_zone_config", target: 27, info: {Target:TABLE system.public.replication_stats Config: Options:"gc.ttlseconds" = 600 User:root}
+I200407 07:43:45.908713 323 sql/sqlbase/structured.go:1529  [n1,intExec=update-reports-meta-generated] publish: descID=28 (reports_meta) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200407 07:43:45.919182 323 sql/event_log.go:130  [n1,intExec=update-reports-meta-generated] Event: "alter_table", target: 28, info: {TableName:system.public.reports_meta Statement:ALTER TABLE system.reports_meta ALTER COLUMN generated SET DATA TYPE TIMESTAMPTZ User:node MutationID:0 CascadeDroppedViews:[]}
+I200407 07:43:45.919712 323 sql/schema_changer.go:965  [n1,intExec=update-reports-meta-generated,scExec] schema change on reports_meta (28 v2) mutation 0 starting execution...
+I200407 07:43:45.919766 323 sql/schema_changer.go:1258  [n1,intExec=update-reports-meta-generated,scExec] waiting for a single version of table 28...
+I200407 07:43:45.922278 323 sql/schema_changer.go:1260  [n1,intExec=update-reports-meta-generated,scExec] waiting for a single version of table 28... done (at v 2)
+I200407 07:43:45.923065 304 sql/sqlbase/structured.go:1529  [n1,intExec=update-reports-meta-generated] publish: descID=25 (replication_constraint_stats) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200407 07:43:45.927798 304 sql/event_log.go:130  [n1,intExec=update-reports-meta-generated] Event: "alter_table", target: 25, info: {TableName:system.public.replication_constraint_stats Statement:ALTER TABLE system.replication_constraint_stats ALTER COLUMN violation_start SET DATA TYPE TIMESTAMPTZ User:node MutationID:0 CascadeDroppedViews:[]}
+I200407 07:43:45.928192 304 sql/schema_changer.go:965  [n1,intExec=update-reports-meta-generated,scExec] schema change on replication_constraint_stats (25 v2) mutation 0 starting execution...
+I200407 07:43:45.928215 304 sql/schema_changer.go:1258  [n1,intExec=update-reports-meta-generated,scExec] waiting for a single version of table 25...
+I200407 07:43:45.930017 304 sql/schema_changer.go:1260  [n1,intExec=update-reports-meta-generated,scExec] waiting for a single version of table 25... done (at v 2)
+I200407 07:43:45.933261 29 server/server.go:1590  [n1] done ensuring all necessary migrations have run
+I200407 07:43:45.933331 29 server/server.go:1841  [n1] serving sql connections
+I200407 07:43:45.933460 29 cli/start.go:803  [config] clusterID: 62cc39e3-7015-46ac-b414-627cadd581ab
+I200407 07:43:45.933501 29 cli/start.go:812  node startup completed:
+CockroachDB node starting at 2020-04-07 07:43:45.933369 +0000 UTC (took 0.8s)
+build:               CCL v19.2.4 @ 2020/02/06 21:49:44 (go1.12.12)
+webui:               http://127.0.0.1:8080
+sql:                 postgresql://root@127.0.0.1:26257?sslmode=disable
+RPC client flags:    cockroach <client cmd> --host=127.0.0.1:26257 --insecure
+logs:                /Users/waititu/goproj/cockroach-data/logs
+temp dir:            /Users/waititu/goproj/cockroach-data/cockroach-temp686354204
+external I/O path:   /Users/waititu/goproj/cockroach-data/extern
+store[0]:            path=/Users/waititu/goproj/cockroach-data
+status:              restarted pre-existing node
+clusterID:           62cc39e3-7015-46ac-b414-627cadd581ab
+nodeID:              1
+I200407 07:43:45.937929 384 server/server_update.go:53  [n1] no need to upgrade, cluster already at the newest version
+I200407 07:43:45.944122 498 sql/event_log.go:130  [n1] Event: "node_restart", target: 1, info: {Descriptor:{NodeID:1 Address:127.0.0.1:26257 Attrs: Locality: ServerVersion:19.2 BuildTag:v19.2.4 StartedAt:1586245425803190000 LocalityAddress:[] ClusterName: SQLAddress:127.0.0.1:26257} ClusterID:62cc39e3-7015-46ac-b414-627cadd581ab StartedAt:1586245425803190000 LastUp:1586245081287285000}
+I200407 07:43:47.220798 80 gossip/gossip.go:1531  [n1] node has connected to cluster via gossip
+I200407 07:43:47.221058 80 storage/stores.go:259  [n1] wrote 0 node addresses to persistent storage
+I200407 07:43:47.690377 500 server/updates.go:267  [n1] A new version is available: 19.2.5, details: https://www.cockroachlabs.com/docs/releases/v19.2.5.html
+W200407 07:43:55.825615 47 server/status/runtime.go:420  [n1] unable to get file descriptor usage (will not try again): not implemented on darwin
+I200407 07:43:55.837920 47 server/status/runtime.go:498  [n1] runtime stats: 71 MiB RSS, 131 goroutines, 85 MiB/38 MiB/129 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (10x), 85 KiB/81 KiB (r/w)net
+I200407 07:44:05.837145 42 storage/store.go:2364  [n1,s1] sstables (read amplification = 1):
+0 [ 90K 1 ]: 90K
+I200407 07:44:05.837507 42 storage/store.go:2365  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   90.41 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Sum      1/0   90.41 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+Uptime(secs): 20.5 total, 20.5 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200407 07:44:05.838557 47 server/status/runtime.go:498  [n1] runtime stats: 78 MiB RSS, 131 goroutines, 93 MiB/30 MiB/135 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 45.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 80 KiB/76 KiB (r/w)net
+I200407 07:44:15.840202 47 server/status/runtime.go:498  [n1] runtime stats: 84 MiB RSS, 131 goroutines, 101 MiB/22 MiB/135 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 47.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 72 KiB/72 KiB (r/w)net
+I200407 07:44:25.846241 47 server/status/runtime.go:498  [n1] runtime stats: 160 MiB RSS, 147 goroutines, 91 MiB/88 MiB/202 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 404.1 CGO/sec, 11.3/1.4 %(u/s)time, 0.0 %gc (3x), 203 KiB/196 KiB (r/w)net
+I200407 07:44:35.849223 47 server/status/runtime.go:498  [n1] runtime stats: 161 MiB RSS, 147 goroutines, 98 MiB/82 MiB/202 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 30.5 CGO/sec, 0.8/0.8 %(u/s)time, 0.0 %gc (0x), 128 KiB/98 KiB (r/w)net
+I200407 07:44:45.826708 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+I200407 07:44:45.849720 47 server/status/runtime.go:498  [n1] runtime stats: 161 MiB RSS, 148 goroutines, 105 MiB/76 MiB/202 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 32.0 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 88 KiB/82 KiB (r/w)net
+I200407 07:44:55.846066 47 server/status/runtime.go:498  [n1] runtime stats: 162 MiB RSS, 146 goroutines, 114 MiB/68 MiB/202 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 44.9 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 118 KiB/92 KiB (r/w)net
+I200407 07:45:05.844032 47 server/status/runtime.go:498  [n1] runtime stats: 162 MiB RSS, 146 goroutines, 122 MiB/60 MiB/202 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 21.3 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 86 KiB/84 KiB (r/w)net
+I200407 07:45:15.858819 47 server/status/runtime.go:498  [n1] runtime stats: 162 MiB RSS, 146 goroutines, 130 MiB/53 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 26.7 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 88 KiB/82 KiB (r/w)net
+I200407 07:45:25.859825 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 150 goroutines, 108 MiB/73 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 30.6 CGO/sec, 2.6/1.0 %(u/s)time, 0.0 %gc (1x), 149 KiB/142 KiB (r/w)net
+I200407 07:45:35.859617 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 150 goroutines, 115 MiB/67 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 27.6 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+I200407 07:45:45.827169 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:45:45.863112 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 150 goroutines, 121 MiB/61 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 23.9 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 101 KiB/86 KiB (r/w)net
+I200407 07:45:55.869597 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 142 goroutines, 128 MiB/55 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 50.8 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 80 KiB/80 KiB (r/w)net
+I200407 07:46:04.662140 2846 sql/event_log.go:130  [n1,client=[::1]:49734,user=root] Event: "create_database", target: 52, info: {DatabaseName:linkgraph Statement:CREATE DATABASE linkgraph User:root}
+I200407 07:46:05.874985 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 142 goroutines, 135 MiB/49 MiB/202 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 46.7 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 80 KiB/81 KiB (r/w)net
+I200407 07:46:15.877077 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 146 goroutines, 120 MiB/128 MiB/268 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 410.3 CGO/sec, 11.5/1.4 %(u/s)time, 0.0 %gc (2x), 193 KiB/188 KiB (r/w)net
+I200407 07:46:25.871080 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 147 goroutines, 127 MiB/122 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 29.6 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 73 KiB/74 KiB (r/w)net
+I200407 07:46:35.871997 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 147 goroutines, 133 MiB/116 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 25.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+I200407 07:46:45.830301 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:46:45.877128 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 147 goroutines, 141 MiB/108 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 25.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 97 KiB/82 KiB (r/w)net
+I200407 07:46:55.874881 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 150 MiB/100 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 50.6 CGO/sec, 1.0/0.8 %(u/s)time, 0.0 %gc (0x), 108 KiB/109 KiB (r/w)net
+I200407 07:47:05.876263 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 159 MiB/91 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 31.2 CGO/sec, 0.9/0.8 %(u/s)time, 0.0 %gc (0x), 146 KiB/146 KiB (r/w)net
+I200407 07:47:15.875993 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 87 MiB/157 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 23.7 CGO/sec, 1.1/0.7 %(u/s)time, 0.0 %gc (1x), 144 KiB/143 KiB (r/w)net
+I200407 07:47:25.878113 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 142 goroutines, 95 MiB/150 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 28.2 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 243 KiB/188 KiB (r/w)net
+I200407 07:47:35.878550 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 102 MiB/144 MiB/268 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 26.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 179 KiB/157 KiB (r/w)net
+I200407 07:47:45.835959 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:47:45.878473 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 110 MiB/136 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 28.3 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 145 KiB/144 KiB (r/w)net
+I200407 07:47:55.885347 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 116 MiB/131 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 50.7 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 209 KiB/168 KiB (r/w)net
+I200407 07:48:05.882903 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 124 MiB/123 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 25.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 149 KiB/148 KiB (r/w)net
+I200407 07:48:15.881707 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 130 MiB/118 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 31.3 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 123 KiB/124 KiB (r/w)net
+I200407 07:48:25.897209 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 136 MiB/112 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 28.5 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 158 KiB/154 KiB (r/w)net
+I200407 07:48:35.890292 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 149 goroutines, 113 MiB/132 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 24.8 CGO/sec, 2.4/0.8 %(u/s)time, 0.0 %gc (1x), 220 KiB/207 KiB (r/w)net
+I200407 07:48:45.832700 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:48:45.901850 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 149 goroutines, 114 MiB/131 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 24.8 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 156 KiB/157 KiB (r/w)net
+I200407 07:48:55.904220 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 149 goroutines, 160 MiB/87 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 54.3 CGO/sec, 2.3/0.8 %(u/s)time, 0.0 %gc (0x), 185 KiB/180 KiB (r/w)net
+I200407 07:49:05.908830 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 149 goroutines, 169 MiB/79 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 28.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 112 KiB/111 KiB (r/w)net
+I200407 07:49:15.912000 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 150 goroutines, 178 MiB/70 MiB/268 MiB GO alloc/idle/total, 15 MiB/22 MiB CGO alloc/total, 25.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/77 KiB (r/w)net
+I200407 07:49:25.915136 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 145 goroutines, 87 MiB/157 MiB/268 MiB GO alloc/idle/total, 15 MiB/21 MiB CGO alloc/total, 26.6 CGO/sec, 1.2/0.6 %(u/s)time, 0.0 %gc (1x), 82 KiB/82 KiB (r/w)net
+I200407 07:49:35.915330 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 94 MiB/152 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 27.1 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 142 KiB/140 KiB (r/w)net
+I200407 07:49:45.842659 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:49:45.922671 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 100 MiB/146 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 28.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 96 KiB/87 KiB (r/w)net
+I200407 07:49:55.929938 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 108 MiB/140 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 52.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 73 KiB/72 KiB (r/w)net
+I200407 07:50:05.934467 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 114 MiB/134 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 24.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 69 KiB/71 KiB (r/w)net
+I200407 07:50:15.951538 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 142 goroutines, 120 MiB/128 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 25.5 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 1.5 MiB/183 KiB (r/w)net
+I200407 07:50:25.941018 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 142 goroutines, 126 MiB/122 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 28.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 1.3 MiB/236 KiB (r/w)net
+I200407 07:50:35.939147 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 142 goroutines, 132 MiB/116 MiB/268 MiB GO alloc/idle/total, 23 MiB/29 MiB CGO alloc/total, 30.9 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 128 KiB/95 KiB (r/w)net
+I200407 07:50:45.850704 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:50:45.944624 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 141 goroutines, 138 MiB/111 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 23.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 73 KiB/73 KiB (r/w)net
+I200407 07:50:55.952068 47 server/status/runtime.go:498  [n1] runtime stats: 203 MiB RSS, 141 goroutines, 145 MiB/104 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 52.9 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 81 KiB/82 KiB (r/w)net
+I200407 07:51:05.948435 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 141 goroutines, 152 MiB/98 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 23.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+I200407 07:51:15.959634 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 84 MiB/161 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.7 CGO/sec, 1.1/0.5 %(u/s)time, 0.0 %gc (1x), 79 KiB/80 KiB (r/w)net
+I200407 07:51:25.963816 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 93 MiB/152 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.6 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 80 KiB/80 KiB (r/w)net
+I200407 07:51:35.963338 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 100 MiB/146 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 25.5 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 73 KiB/72 KiB (r/w)net
+I200407 07:51:45.850147 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:51:45.964068 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 107 MiB/140 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 29.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 83 KiB/80 KiB (r/w)net
+I200407 07:51:55.968220 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 113 MiB/134 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 50.8 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/80 KiB (r/w)net
+I200407 07:52:05.970388 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 120 MiB/128 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 27.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+I200407 07:52:15.981063 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 126 MiB/123 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.7 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 82 KiB/97 KiB (r/w)net
+I200407 07:52:25.975690 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 132 MiB/117 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 611 KiB/5.0 MiB (r/w)net
+I200407 07:52:35.977422 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 138 MiB/111 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 23.6 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 468 KiB/7.6 MiB (r/w)net
+I200407 07:52:45.851861 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:52:45.978171 47 server/status/runtime.go:498  [n1] runtime stats: 200 MiB RSS, 141 goroutines, 144 MiB/105 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 28.6 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 126 KiB/1.5 MiB (r/w)net
+I200407 07:52:55.995124 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 141 goroutines, 151 MiB/99 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 52.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 86 KiB/78 KiB (r/w)net
+I200407 07:53:05.998859 47 server/status/runtime.go:498  [n1] runtime stats: 199 MiB RSS, 141 goroutines, 83 MiB/160 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 21.1 CGO/sec, 0.8/0.4 %(u/s)time, 0.0 %gc (1x), 109 KiB/100 KiB (r/w)net
+I200407 07:53:15.995854 47 server/status/runtime.go:498  [n1] runtime stats: 199 MiB RSS, 142 goroutines, 92 MiB/153 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 29.0 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 76 KiB/77 KiB (r/w)net
+I200407 07:53:25.998957 47 server/status/runtime.go:498  [n1] runtime stats: 200 MiB RSS, 142 goroutines, 99 MiB/147 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.6 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 74 KiB/75 KiB (r/w)net
+I200407 07:53:35.993260 47 server/status/runtime.go:498  [n1] runtime stats: 200 MiB RSS, 142 goroutines, 106 MiB/141 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 27.4 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 81 KiB/78 KiB (r/w)net
+I200407 07:53:45.857780 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E200407 07:53:45.911579 187 storage/queue.go:1147  [n1,replicate] 24 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I200407 07:53:46.000957 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 141 goroutines, 113 MiB/134 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 27.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 75 KiB/74 KiB (r/w)net
+I200407 07:53:56.003232 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 141 goroutines, 120 MiB/128 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 49.1 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+I200407 07:54:05.861819 42 storage/store.go:2364  [n1,s1] sstables (read amplification = 1):
+0 [ 90K 1 ]: 90K
+I200407 07:54:05.862111 42 storage/store.go:2365  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   90.41 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Sum      1/0   90.41 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+Uptime(secs): 620.6 total, 600.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200407 07:54:06.004375 47 server/status/runtime.go:498  [n1] runtime stats: 201 MiB RSS, 141 goroutines, 126 MiB/123 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 25.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 82 KiB/82 KiB (r/w)net
+I200407 07:54:16.015842 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 142 goroutines, 132 MiB/117 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 26.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 81 KiB/84 KiB (r/w)net
+I200407 07:54:26.013112 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 142 goroutines, 138 MiB/111 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 25.4 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 104 KiB/82 KiB (r/w)net
+I200407 07:54:36.027249 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 143 goroutines, 144 MiB/106 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 24.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+I200407 07:54:45.857470 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:54:46.013078 47 server/status/runtime.go:498  [n1] runtime stats: 202 MiB RSS, 142 goroutines, 150 MiB/100 MiB/266 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 30.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 74 KiB/74 KiB (r/w)net
+I200407 07:54:56.021965 47 server/status/runtime.go:498  [n1] runtime stats: 203 MiB RSS, 142 goroutines, 81 MiB/162 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 46.6 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (1x), 74 KiB/73 KiB (r/w)net
+I200407 07:55:06.017335 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 142 goroutines, 90 MiB/154 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 33.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 318 KiB/147 KiB (r/w)net
+I200407 07:55:16.027760 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 143 goroutines, 96 MiB/149 MiB/268 MiB GO alloc/idle/total, 22 MiB/29 MiB CGO alloc/total, 24.8 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 191 KiB/110 KiB (r/w)net
+I200407 07:55:26.024070 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 142 goroutines, 103 MiB/143 MiB/268 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 25.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 100 KiB/80 KiB (r/w)net
+I200407 07:55:36.029522 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 143 goroutines, 109 MiB/137 MiB/268 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 24.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+I200407 07:55:45.857308 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:55:46.041003 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 142 goroutines, 116 MiB/131 MiB/268 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 28.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 2.0 MiB/244 KiB (r/w)net
+I200407 07:55:56.042987 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 123 MiB/125 MiB/268 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 48.9 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 1.2 MiB/248 KiB (r/w)net
+I200407 07:56:06.052395 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 129 MiB/119 MiB/268 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 31.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 315 KiB/135 KiB (r/w)net
+I200407 07:56:16.048800 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 143 goroutines, 135 MiB/114 MiB/182 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 23.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 142 KiB/96 KiB (r/w)net
+I200407 07:56:26.050592 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 141 MiB/108 MiB/182 MiB GO alloc/idle/total, 30 MiB/37 MiB CGO alloc/total, 24.5 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+I200407 07:56:36.061280 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 148 MiB/102 MiB/182 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 32.4 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 85 KiB/87 KiB (r/w)net
+I200407 07:56:45.861894 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:56:46.062336 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 154 MiB/96 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 21.3 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 115 KiB/103 KiB (r/w)net
+I200407 07:56:56.064351 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 87 MiB/157 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 51.7 CGO/sec, 1.2/0.7 %(u/s)time, 0.0 %gc (1x), 101 KiB/81 KiB (r/w)net
+I200407 07:57:06.064868 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 93 MiB/152 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 23.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 1.1 MiB/154 KiB (r/w)net
+I200407 07:57:16.071589 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 142 goroutines, 100 MiB/145 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.1 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 151 KiB/102 KiB (r/w)net
+I200407 07:57:26.076186 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 142 goroutines, 107 MiB/139 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 28.9 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 118 KiB/87 KiB (r/w)net
+I200407 07:57:36.079214 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 142 goroutines, 114 MiB/134 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 24.8 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 194 KiB/88 KiB (r/w)net
+I200407 07:57:45.860928 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:57:46.079212 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 120 MiB/128 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 28.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 75 KiB/74 KiB (r/w)net
+I200407 07:57:56.079199 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 127 MiB/122 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 48.2 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 194 KiB/84 KiB (r/w)net
+I200407 07:58:06.084899 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 133 MiB/116 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 29.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 80 KiB/80 KiB (r/w)net
+I200407 07:58:16.084501 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 142 goroutines, 139 MiB/111 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 21.3 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 86 KiB/94 KiB (r/w)net
+I200407 07:58:26.087549 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 142 goroutines, 145 MiB/105 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 28.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 105 KiB/84 KiB (r/w)net
+I200407 07:58:36.092233 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 142 goroutines, 78 MiB/165 MiB/183 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 24.8 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (1x), 91 KiB/83 KiB (r/w)net
+I200407 07:58:45.863401 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:58:46.103976 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 87 MiB/157 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.1 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 848 KiB/113 KiB (r/w)net
+I200407 07:58:56.108251 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 95 MiB/151 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 52.7 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+I200407 07:59:06.098477 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 102 MiB/145 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/80 KiB (r/w)net
+I200407 07:59:16.108219 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 108 MiB/139 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.0 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 74 KiB/74 KiB (r/w)net
+I200407 07:59:26.100967 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 114 MiB/134 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 27.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+I200407 07:59:36.108934 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 120 MiB/128 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 30.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 116 KiB/96 KiB (r/w)net
+I200407 07:59:45.867834 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 07:59:46.108032 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 141 goroutines, 126 MiB/122 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.5 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 116 KiB/86 KiB (r/w)net
+I200407 07:59:56.109898 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 133 MiB/116 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 49.4 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 75 KiB/72 KiB (r/w)net
+I200407 08:00:06.122771 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 139 MiB/110 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 22.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 76 KiB/76 KiB (r/w)net
+I200407 08:00:16.115249 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 145 MiB/104 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 29.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 74 KiB/73 KiB (r/w)net
+I200407 08:00:26.120759 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 79 MiB/165 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 22.9 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (1x), 81 KiB/80 KiB (r/w)net
+I200407 08:00:36.127577 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 143 goroutines, 88 MiB/156 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 28.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 81 KiB/80 KiB (r/w)net
+I200407 08:00:45.866384 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:00:46.123266 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 95 MiB/150 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 26.2 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+I200407 08:00:56.124662 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 102 MiB/145 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 48.5 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 1.1 MiB/257 KiB (r/w)net
+I200407 08:01:06.129729 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 108 MiB/139 MiB/181 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 28.8 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 127 KiB/87 KiB (r/w)net
+I200407 08:01:16.124369 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 143 goroutines, 114 MiB/134 MiB/180 MiB GO alloc/idle/total, 29 MiB/37 MiB CGO alloc/total, 25.5 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 84 KiB/86 KiB (r/w)net
+I200407 08:01:26.128263 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 120 MiB/128 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 25.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 84 KiB/80 KiB (r/w)net
+I200407 08:01:36.133916 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 126 MiB/122 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 29.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 69 KiB/69 KiB (r/w)net
+I200407 08:01:45.872817 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:01:46.134423 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 141 goroutines, 133 MiB/116 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 30.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+I200407 08:01:56.140190 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 141 goroutines, 140 MiB/110 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 54.5 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+I200407 08:02:06.146531 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 141 goroutines, 146 MiB/104 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 23.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 188 KiB/139 KiB (r/w)net
+I200407 08:02:16.140510 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 142 goroutines, 152 MiB/98 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 27.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 114 KiB/86 KiB (r/w)net
+I200407 08:02:26.153202 47 server/status/runtime.go:498  [n1] runtime stats: 180 MiB RSS, 142 goroutines, 86 MiB/158 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 26.8 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (1x), 88 KiB/81 KiB (r/w)net
+I200407 08:02:36.150029 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 142 goroutines, 93 MiB/152 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 27.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 86 KiB/79 KiB (r/w)net
+I200407 08:02:45.870011 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:02:46.158357 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 141 goroutines, 100 MiB/146 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 26.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/79 KiB (r/w)net
+I200407 08:02:56.155487 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 141 goroutines, 107 MiB/140 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 54.7 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 86 KiB/80 KiB (r/w)net
+I200407 08:03:06.160195 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 141 goroutines, 113 MiB/134 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 21.3 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 71 KiB/72 KiB (r/w)net
+I200407 08:03:16.160126 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 119 MiB/129 MiB/180 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 28.9 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/79 KiB (r/w)net
+I200407 08:03:26.165332 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 125 MiB/123 MiB/180 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.0 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 222 KiB/147 KiB (r/w)net
+I200407 08:03:36.172704 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 131 MiB/118 MiB/180 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 21.3 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 204 KiB/123 KiB (r/w)net
+I200407 08:03:45.876895 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E200407 08:03:45.933127 187 storage/queue.go:1147  [n1,replicate] 24 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I200407 08:03:46.172372 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 141 goroutines, 138 MiB/111 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 30.9 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+I200407 08:03:56.175100 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 141 goroutines, 145 MiB/105 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 54.5 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 138 KiB/96 KiB (r/w)net
+I200407 08:04:05.879978 42 storage/store.go:2364  [n1,s1] sstables (read amplification = 1):
+0 [ 90K 1 ]: 90K
+I200407 08:04:05.880188 42 storage/store.go:2365  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   90.41 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Sum      1/0   90.41 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      7.4      0.01              0.00         1    0.012       0      0
+Uptime(secs): 1220.6 total, 600.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200407 08:04:06.178115 47 server/status/runtime.go:498  [n1] runtime stats: 183 MiB RSS, 141 goroutines, 151 MiB/99 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 25.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/77 KiB (r/w)net
+I200407 08:04:16.175918 47 server/status/runtime.go:498  [n1] runtime stats: 183 MiB RSS, 142 goroutines, 84 MiB/160 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 25.7 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (1x), 108 KiB/86 KiB (r/w)net
+I200407 08:04:26.186986 47 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 142 goroutines, 92 MiB/152 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 83 KiB/82 KiB (r/w)net
+I200407 08:04:36.184502 47 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 142 goroutines, 99 MiB/146 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 21.3 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 761 KiB/103 KiB (r/w)net
+I200407 08:04:45.874192 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:04:46.192636 47 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 141 goroutines, 106 MiB/140 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 31.9 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 70 KiB/70 KiB (r/w)net
+I200407 08:04:56.194597 47 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 141 goroutines, 113 MiB/134 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 53.1 CGO/sec, 1.0/0.8 %(u/s)time, 0.0 %gc (0x), 77 KiB/77 KiB (r/w)net
+I200407 08:05:06.194964 47 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 141 goroutines, 120 MiB/128 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 23.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 87 KiB/82 KiB (r/w)net
+I200407 08:05:16.196128 47 server/status/runtime.go:498  [n1] runtime stats: 185 MiB RSS, 142 goroutines, 126 MiB/123 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 82 KiB/78 KiB (r/w)net
+I200407 08:05:26.201448 47 server/status/runtime.go:498  [n1] runtime stats: 185 MiB RSS, 142 goroutines, 132 MiB/117 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 23.1 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 118 KiB/89 KiB (r/w)net
+I200407 08:05:36.206190 47 server/status/runtime.go:498  [n1] runtime stats: 185 MiB RSS, 142 goroutines, 138 MiB/111 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 101 KiB/86 KiB (r/w)net
+I200407 08:05:45.877875 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:05:46.213718 47 server/status/runtime.go:498  [n1] runtime stats: 185 MiB RSS, 141 goroutines, 144 MiB/106 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 26.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 85 KiB/84 KiB (r/w)net
+I200407 08:05:56.209346 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 141 goroutines, 151 MiB/99 MiB/172 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 50.3 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 79 KiB/79 KiB (r/w)net
+I200407 08:06:06.215042 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 141 goroutines, 82 MiB/162 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 23.6 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (1x), 80 KiB/79 KiB (r/w)net
+I200407 08:06:16.215010 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 142 goroutines, 91 MiB/154 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 30.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 68 KiB/67 KiB (r/w)net
+I200407 08:06:26.220127 47 server/status/runtime.go:498  [n1] runtime stats: 186 MiB RSS, 142 goroutines, 98 MiB/148 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 25.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+I200407 08:06:36.225148 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 142 goroutines, 104 MiB/142 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+I200407 08:06:45.886489 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200407 08:06:46.240980 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 141 goroutines, 110 MiB/137 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 26.7 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 162 KiB/80 KiB (r/w)net
+I200407 08:06:56.242567 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 142 goroutines, 117 MiB/131 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 50.3 CGO/sec, 1.0/0.8 %(u/s)time, 0.0 %gc (0x), 82 KiB/80 KiB (r/w)net
+I200407 08:07:06.248885 47 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 142 goroutines, 123 MiB/125 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 27.2 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 74 KiB/73 KiB (r/w)net
+W200407 08:07:15.893107 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:07:15.921218 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:07:16.259390 47 server/status/runtime.go:498  [n1] runtime stats: 188 MiB RSS, 143 goroutines, 130 MiB/119 MiB/173 MiB GO alloc/idle/total, 36 MiB/45 MiB CGO alloc/total, 26.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+W200407 08:07:25.891742 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:07:25.928348 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:07:26.259510 47 server/status/runtime.go:498  [n1] runtime stats: 188 MiB RSS, 143 goroutines, 135 MiB/114 MiB/173 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 24.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 157 KiB/79 KiB (r/w)net
+W200407 08:07:35.891800 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:07:35.917421 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:07:36.263973 47 server/status/runtime.go:498  [n1] runtime stats: 188 MiB RSS, 143 goroutines, 141 MiB/108 MiB/173 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 22.6 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 79 KiB/79 KiB (r/w)net
+I200407 08:07:45.893877 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:07:45.893892 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:07:45.894112 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:07:45.926532 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:07:46.271709 47 server/status/runtime.go:498  [n1] runtime stats: 188 MiB RSS, 142 goroutines, 147 MiB/102 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 26.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 75 KiB/75 KiB (r/w)net
+W200407 08:07:55.895328 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:07:55.933641 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:07:56.273975 47 server/status/runtime.go:498  [n1] runtime stats: 188 MiB RSS, 141 goroutines, 82 MiB/162 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 53.2 CGO/sec, 1.3/0.8 %(u/s)time, 0.0 %gc (1x), 74 KiB/74 KiB (r/w)net
+W200407 08:08:05.896142 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:08:05.931612 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:06.282422 47 server/status/runtime.go:498  [n1] runtime stats: 189 MiB RSS, 141 goroutines, 90 MiB/154 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 23.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 165 KiB/83 KiB (r/w)net
+W200407 08:08:15.893912 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:08:15.932077 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:16.287106 47 server/status/runtime.go:498  [n1] runtime stats: 189 MiB RSS, 142 goroutines, 97 MiB/148 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 28.6 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/76 KiB (r/w)net
+W200407 08:08:25.895791 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:08:25.923002 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:26.288630 47 server/status/runtime.go:498  [n1] runtime stats: 189 MiB RSS, 142 goroutines, 103 MiB/143 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 22.3 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 320 KiB/130 KiB (r/w)net
+W200407 08:08:35.893727 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:08:35.917864 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:36.305710 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 142 goroutines, 108 MiB/138 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 30.6 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 1.2 MiB/234 KiB (r/w)net
+W200407 08:08:45.898905 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:08:45.899027 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:08:45.899111 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:08:45.928239 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:46.292571 47 server/status/runtime.go:498  [n1] runtime stats: 176 MiB RSS, 141 goroutines, 114 MiB/132 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 22.6 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 540 KiB/159 KiB (r/w)net
+W200407 08:08:55.895285 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:08:55.921830 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:08:56.297352 47 server/status/runtime.go:498  [n1] runtime stats: 176 MiB RSS, 141 goroutines, 121 MiB/127 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 49.5 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/77 KiB (r/w)net
+W200407 08:09:05.899447 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:09:05.923491 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:06.303970 47 server/status/runtime.go:498  [n1] runtime stats: 176 MiB RSS, 141 goroutines, 127 MiB/121 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 24.7 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 82 KiB/77 KiB (r/w)net
+W200407 08:09:15.894566 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:09:15.932122 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:16.304683 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 142 goroutines, 133 MiB/116 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 28.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 76 KiB/75 KiB (r/w)net
+W200407 08:09:25.895152 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:09:25.920430 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:26.312930 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 142 goroutines, 138 MiB/110 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 23.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 92 KiB/85 KiB (r/w)net
+W200407 08:09:35.899357 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:09:35.927483 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:36.312523 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 142 goroutines, 144 MiB/105 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 22.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 94 KiB/76 KiB (r/w)net
+I200407 08:09:45.895861 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:09:45.895883 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:09:45.895973 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:09:45.930673 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:46.316772 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 141 goroutines, 150 MiB/99 MiB/173 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 26.7 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 113 KiB/96 KiB (r/w)net
+W200407 08:09:55.895862 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:09:55.927682 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:09:56.318500 47 server/status/runtime.go:498  [n1] runtime stats: 180 MiB RSS, 141 goroutines, 80 MiB/163 MiB/174 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 51.4 CGO/sec, 1.2/0.7 %(u/s)time, 0.0 %gc (1x), 79 KiB/78 KiB (r/w)net
+W200407 08:10:05.898293 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:10:05.933599 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:06.318794 47 server/status/runtime.go:498  [n1] runtime stats: 180 MiB RSS, 141 goroutines, 88 MiB/156 MiB/174 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 26.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 76 KiB/76 KiB (r/w)net
+W200407 08:10:15.900547 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:10:15.926522 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:16.323132 47 server/status/runtime.go:498  [n1] runtime stats: 180 MiB RSS, 142 goroutines, 96 MiB/150 MiB/174 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 20.5 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 76 KiB/76 KiB (r/w)net
+W200407 08:10:25.898384 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:10:25.926265 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:26.322592 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 142 goroutines, 102 MiB/144 MiB/174 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 33.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+W200407 08:10:35.899507 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:10:35.926134 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:36.327730 47 server/status/runtime.go:498  [n1] runtime stats: 181 MiB RSS, 142 goroutines, 109 MiB/138 MiB/174 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 20.7 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 80 KiB/77 KiB (r/w)net
+W200407 08:10:45.898185 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:10:45.898196 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:10:45.898319 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:10:45.935045 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:46.335215 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 141 goroutines, 114 MiB/132 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 26.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/79 KiB (r/w)net
+W200407 08:10:55.901372 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:10:55.930797 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:10:56.333081 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 141 goroutines, 121 MiB/126 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 57.2 CGO/sec, 1.1/0.8 %(u/s)time, 0.0 %gc (0x), 88 KiB/78 KiB (r/w)net
+W200407 08:11:05.901928 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:11:05.929936 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:06.333247 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 141 goroutines, 127 MiB/121 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 27.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 175 KiB/80 KiB (r/w)net
+W200407 08:11:15.900757 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:11:15.925191 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:16.335966 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 133 MiB/116 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 24.7 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 99 KiB/89 KiB (r/w)net
+W200407 08:11:25.901293 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:11:25.925978 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:26.333455 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 139 MiB/110 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 24.6 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 113 KiB/88 KiB (r/w)net
+W200407 08:11:35.902471 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:11:35.932925 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:36.339253 47 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 142 goroutines, 144 MiB/105 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 30.4 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 105 KiB/89 KiB (r/w)net
+I200407 08:11:45.899208 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:11:45.899210 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:11:45.899340 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:11:45.924109 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:46.344911 47 server/status/runtime.go:498  [n1] runtime stats: 177 MiB RSS, 141 goroutines, 150 MiB/99 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 24.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 76 KiB/75 KiB (r/w)net
+W200407 08:11:55.901098 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:11:55.929139 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:11:56.342990 47 server/status/runtime.go:498  [n1] runtime stats: 178 MiB RSS, 142 goroutines, 83 MiB/161 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 49.7 CGO/sec, 1.1/0.5 %(u/s)time, 0.0 %gc (1x), 81 KiB/78 KiB (r/w)net
+W200407 08:12:05.733243 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:12:05.900598 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:12:05.927212 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:06.341502 47 server/status/runtime.go:498  [n1] runtime stats: 178 MiB RSS, 142 goroutines, 92 MiB/153 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 26.5 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 84 KiB/85 KiB (r/w)net
+W200407 08:12:15.902567 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:12:15.927833 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:16.348045 47 server/status/runtime.go:498  [n1] runtime stats: 178 MiB RSS, 143 goroutines, 98 MiB/147 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 28.5 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 131 KiB/90 KiB (r/w)net
+W200407 08:12:25.902557 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:12:25.925949 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:26.357232 47 server/status/runtime.go:498  [n1] runtime stats: 174 MiB RSS, 143 goroutines, 104 MiB/141 MiB/175 MiB GO alloc/idle/total, 45 MiB/53 MiB CGO alloc/total, 24.2 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 83 KiB/86 KiB (r/w)net
+W200407 08:12:35.901210 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:12:35.944885 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:36.358793 47 server/status/runtime.go:498  [n1] runtime stats: 147 MiB RSS, 143 goroutines, 110 MiB/136 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 24.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 106 KiB/102 KiB (r/w)net
+W200407 08:12:45.900779 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:12:45.900836 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:12:45.900905 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:12:45.935432 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:46.359032 47 server/status/runtime.go:498  [n1] runtime stats: 150 MiB RSS, 142 goroutines, 116 MiB/130 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 28.7 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 88 KiB/83 KiB (r/w)net
+W200407 08:12:55.903953 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:12:55.934818 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:12:56.361455 47 server/status/runtime.go:498  [n1] runtime stats: 152 MiB RSS, 141 goroutines, 123 MiB/125 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 45.4 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 100 KiB/90 KiB (r/w)net
+W200407 08:13:05.904129 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:13:05.934796 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:13:06.364869 47 server/status/runtime.go:498  [n1] runtime stats: 153 MiB RSS, 141 goroutines, 129 MiB/119 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 27.8 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 95 KiB/93 KiB (r/w)net
+W200407 08:13:14.022870 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:13:15.906743 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:13:15.928891 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:13:16.366024 47 server/status/runtime.go:498  [n1] runtime stats: 158 MiB RSS, 142 goroutines, 135 MiB/113 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 23.0 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 80 KiB/78 KiB (r/w)net
+W200407 08:13:25.904720 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:13:25.927062 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:13:26.361067 47 server/status/runtime.go:498  [n1] runtime stats: 163 MiB RSS, 142 goroutines, 141 MiB/108 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 28.4 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 465 KiB/463 KiB (r/w)net
+W200407 08:13:35.902718 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:13:35.940400 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:13:36.371743 47 server/status/runtime.go:498  [n1] runtime stats: 165 MiB RSS, 142 goroutines, 147 MiB/102 MiB/175 MiB GO alloc/idle/total, 44 MiB/53 MiB CGO alloc/total, 26.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 7.5 MiB/7.5 MiB (r/w)net
+I200407 08:13:45.904267 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:13:45.904301 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:13:45.904374 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:13:45.936391 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+E200407 08:13:45.961983 187 storage/queue.go:1147  [n1,replicate] 24 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I200407 08:13:46.371555 47 server/status/runtime.go:498  [n1] runtime stats: 168 MiB RSS, 141 goroutines, 153 MiB/96 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 30.9 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 16 MiB/16 MiB (r/w)net
+W200407 08:13:55.907450 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:13:55.926872 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:13:56.369621 47 server/status/runtime.go:498  [n1] runtime stats: 169 MiB RSS, 141 goroutines, 86 MiB/158 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 50.1 CGO/sec, 1.0/0.5 %(u/s)time, 0.0 %gc (1x), 3.6 MiB/3.6 MiB (r/w)net
+W200407 08:14:01.260470 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:14:05.907759 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:14:05.932169 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:06.366318 47 server/status/runtime.go:498  [n1] runtime stats: 170 MiB RSS, 141 goroutines, 93 MiB/152 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.3 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 82 KiB/83 KiB (r/w)net
+W200407 08:14:15.908786 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:14:15.932784 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:16.380517 47 server/status/runtime.go:498  [n1] runtime stats: 170 MiB RSS, 142 goroutines, 100 MiB/146 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.9 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 86 KiB/84 KiB (r/w)net
+W200407 08:14:25.904363 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:14:25.945050 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:26.385435 47 server/status/runtime.go:498  [n1] runtime stats: 171 MiB RSS, 142 goroutines, 106 MiB/140 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.5 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+W200407 08:14:35.908653 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:14:35.932875 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:36.380826 47 server/status/runtime.go:498  [n1] runtime stats: 171 MiB RSS, 142 goroutines, 112 MiB/135 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 28.4 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 80 KiB/80 KiB (r/w)net
+W200407 08:14:45.907455 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:14:45.907493 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:14:45.907558 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:14:45.937724 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:46.380700 47 server/status/runtime.go:498  [n1] runtime stats: 171 MiB RSS, 141 goroutines, 118 MiB/130 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 23.0 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 92 KiB/83 KiB (r/w)net
+W200407 08:14:51.609283 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:14:55.909466 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:14:55.932610 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:14:56.386604 47 server/status/runtime.go:498  [n1] runtime stats: 172 MiB RSS, 141 goroutines, 124 MiB/124 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 52.3 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 84 KiB/78 KiB (r/w)net
+W200407 08:15:05.909769 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:15:05.943429 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:06.390232 47 server/status/runtime.go:498  [n1] runtime stats: 172 MiB RSS, 141 goroutines, 131 MiB/118 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.2 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+W200407 08:15:15.906502 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:15:15.935291 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:16.396832 47 server/status/runtime.go:498  [n1] runtime stats: 172 MiB RSS, 142 goroutines, 137 MiB/112 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 28.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 80 KiB/77 KiB (r/w)net
+W200407 08:15:25.910072 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:15:25.933839 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:26.401427 47 server/status/runtime.go:498  [n1] runtime stats: 172 MiB RSS, 142 goroutines, 142 MiB/107 MiB/175 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/77 KiB (r/w)net
+W200407 08:15:35.909158 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:15:35.935555 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:36.405773 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 147 goroutines, 80 MiB/163 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 414.2 CGO/sec, 11.6/1.3 %(u/s)time, 0.0 %gc (3x), 179 KiB/174 KiB (r/w)net
+I200407 08:15:45.906304 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:15:45.906308 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:15:45.906411 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:15:45.947401 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:46.411584 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 146 goroutines, 89 MiB/154 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 23.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 81 KiB/83 KiB (r/w)net
+W200407 08:15:47.644320 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:15:55.911732 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:15:55.948556 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:15:56.410521 47 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 146 goroutines, 96 MiB/148 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 49.9 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 173 KiB/133 KiB (r/w)net
+W200407 08:16:05.911037 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:16:05.937750 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:06.422560 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 146 goroutines, 103 MiB/143 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 28.5 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 114 KiB/83 KiB (r/w)net
+W200407 08:16:15.910210 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:16:15.943940 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:16.422204 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 147 goroutines, 108 MiB/137 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 20.7 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 78 KiB/78 KiB (r/w)net
+W200407 08:16:25.914125 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:16:25.943910 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:26.426279 47 server/status/runtime.go:498  [n1] runtime stats: 205 MiB RSS, 142 goroutines, 114 MiB/132 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.6 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 75 KiB/75 KiB (r/w)net
+W200407 08:16:35.908067 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:16:35.944704 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:36.431337 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 120 MiB/127 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 27.7 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 88 KiB/84 KiB (r/w)net
+I200407 08:16:45.908525 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:16:45.908529 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:16:45.908682 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:16:45.942996 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:46.439338 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 126 MiB/121 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 27.2 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 77 KiB/78 KiB (r/w)net
+W200407 08:16:55.298773 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:16:55.911562 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:16:55.936916 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:16:56.439762 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 133 MiB/116 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 48.6 CGO/sec, 1.0/0.8 %(u/s)time, 0.0 %gc (0x), 75 KiB/74 KiB (r/w)net
+W200407 08:17:05.908836 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:17:05.943039 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:06.446043 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 141 goroutines, 138 MiB/110 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 25.1 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 74 KiB/74 KiB (r/w)net
+W200407 08:17:15.912229 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:17:15.936376 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:16.448909 47 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 142 goroutines, 144 MiB/105 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.4 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 69 KiB/69 KiB (r/w)net
+W200407 08:17:25.912489 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:17:25.946034 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:26.447881 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 142 goroutines, 150 MiB/99 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 30.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 74 KiB/74 KiB (r/w)net
+W200407 08:17:35.914028 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:17:35.939697 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:36.452502 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 142 goroutines, 82 MiB/161 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 23.8 CGO/sec, 1.0/0.5 %(u/s)time, 0.0 %gc (1x), 81 KiB/80 KiB (r/w)net
+W200407 08:17:45.913180 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:17:45.913238 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:17:45.913325 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:17:45.937951 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:46.454542 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 141 goroutines, 90 MiB/154 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 23.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 75 KiB/75 KiB (r/w)net
+W200407 08:17:55.913337 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:17:55.938381 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:17:56.458187 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 141 goroutines, 98 MiB/147 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 50.0 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 84 KiB/82 KiB (r/w)net
+W200407 08:17:57.796385 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:18:05.913682 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:18:05.947251 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:06.465149 47 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 141 goroutines, 104 MiB/141 MiB/202 MiB GO alloc/idle/total, 52 MiB/61 MiB CGO alloc/total, 24.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 87 KiB/82 KiB (r/w)net
+W200407 08:18:15.914033 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:18:15.940291 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:16.460389 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 142 goroutines, 111 MiB/135 MiB/202 MiB GO alloc/idle/total, 52 MiB/61 MiB CGO alloc/total, 24.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 89 KiB/83 KiB (r/w)net
+W200407 08:18:25.911018 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:18:25.935060 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:26.458807 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 142 goroutines, 117 MiB/130 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.1 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 72 KiB/72 KiB (r/w)net
+W200407 08:18:35.913879 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:18:35.951165 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:36.464703 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 142 goroutines, 123 MiB/125 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 80 KiB/80 KiB (r/w)net
+W200407 08:18:45.202316 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+I200407 08:18:45.912065 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:18:45.912101 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:18:45.912143 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:18:45.942525 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:46.472681 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 128 MiB/119 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 27.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 70 KiB/70 KiB (r/w)net
+W200407 08:18:55.917163 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:18:55.950177 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:18:56.473929 47 server/status/runtime.go:498  [n1] runtime stats: 208 MiB RSS, 141 goroutines, 135 MiB/113 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 52.1 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 84 KiB/78 KiB (r/w)net
+W200407 08:19:05.914383 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:19:05.951047 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:06.471751 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 141 goroutines, 141 MiB/108 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.4 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 81 KiB/81 KiB (r/w)net
+W200407 08:19:15.912636 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:19:15.941271 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:16.474440 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 142 goroutines, 147 MiB/102 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.7 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 77 KiB/77 KiB (r/w)net
+W200407 08:19:25.915556 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:19:25.953358 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:26.475138 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 142 goroutines, 80 MiB/162 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 24.5 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (1x), 78 KiB/77 KiB (r/w)net
+W200407 08:19:35.914972 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:19:35.942917 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:36.481277 47 server/status/runtime.go:498  [n1] runtime stats: 209 MiB RSS, 143 goroutines, 89 MiB/155 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/80 KiB (r/w)net
+W200407 08:19:41.182969 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+I200407 08:19:45.913705 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:19:45.913732 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+W200407 08:19:45.913809 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:19:45.943442 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:46.482742 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 95 MiB/150 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.1 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 118 KiB/93 KiB (r/w)net
+W200407 08:19:55.915632 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:19:55.951700 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:19:56.480352 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 102 MiB/144 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 50.0 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 89 KiB/84 KiB (r/w)net
+W200407 08:20:05.914097 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:20:05.944513 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:06.486171 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 107 MiB/139 MiB/202 MiB GO alloc/idle/total, 53 MiB/61 MiB CGO alloc/total, 26.8 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 78 KiB/79 KiB (r/w)net
+W200407 08:20:15.916771 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:20:15.939700 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:16.490390 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 143 goroutines, 114 MiB/133 MiB/202 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 22.3 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 497 KiB/128 KiB (r/w)net
+W200407 08:20:25.915789 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:20:25.945990 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:26.495705 47 server/status/runtime.go:498  [n1] runtime stats: 210 MiB RSS, 142 goroutines, 120 MiB/127 MiB/202 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 30.3 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 155 KiB/152 KiB (r/w)net
+W200407 08:20:35.916139 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:20:35.943069 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:36.496432 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 142 goroutines, 126 MiB/122 MiB/202 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 26.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 654 KiB/127 KiB (r/w)net
+W200407 08:20:45.916345 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:20:45.916354 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:20:45.916496 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:20:45.942988 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:46.496230 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 132 MiB/117 MiB/202 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 23.0 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 1.8 MiB/284 KiB (r/w)net
+W200407 08:20:49.888788 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:20:55.917245 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:20:55.952662 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:20:56.498598 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 138 MiB/111 MiB/202 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 50.1 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 116 KiB/104 KiB (r/w)net
+W200407 08:21:05.918125 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:21:05.940073 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:06.511724 47 server/status/runtime.go:498  [n1] runtime stats: 211 MiB RSS, 141 goroutines, 144 MiB/105 MiB/202 MiB GO alloc/idle/total, 61 MiB/69 MiB CGO alloc/total, 26.8 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 3.0 MiB/189 KiB (r/w)net
+W200407 08:21:15.920164 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:21:15.943612 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:16.510982 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 150 MiB/100 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 26.6 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 4.3 MiB/290 KiB (r/w)net
+W200407 08:21:25.918577 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:21:25.943783 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:26.515198 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 82 MiB/161 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 24.2 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (1x), 2.4 MiB/185 KiB (r/w)net
+W200407 08:21:35.921995 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:21:35.955213 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:36.521659 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 142 goroutines, 90 MiB/154 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 26.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 2.2 MiB/148 KiB (r/w)net
+W200407 08:21:43.606660 147 storage/store_rebalancer.go:219  [n1,s1,store-rebalancer] StorePool missing descriptor for local store
+W200407 08:21:45.917253 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:21:45.917311 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:21:45.917420 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:21:45.944609 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:46.525276 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 141 goroutines, 96 MiB/149 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 25.2 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 586 KiB/113 KiB (r/w)net
+W200407 08:21:55.919771 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:21:55.948365 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:21:56.533347 47 server/status/runtime.go:498  [n1] runtime stats: 212 MiB RSS, 141 goroutines, 103 MiB/143 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 54.2 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 4.5 MiB/246 KiB (r/w)net
+W200407 08:22:05.920566 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:22:05.954457 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:22:06.554293 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 141 goroutines, 109 MiB/137 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 24.1 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 69 KiB/68 KiB (r/w)net
+W200407 08:22:15.920845 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:22:15.947801 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:22:16.557473 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 142 goroutines, 115 MiB/132 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 22.5 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 3.8 MiB/259 KiB (r/w)net
+W200407 08:22:25.922494 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:22:25.948163 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:22:26.565012 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 142 goroutines, 121 MiB/127 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 24.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 2.3 MiB/174 KiB (r/w)net
+W200407 08:22:35.922038 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+E200407 08:22:35.946676 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:22:36.569095 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 143 goroutines, 127 MiB/121 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 28.0 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 2.1 MiB/150 KiB (r/w)net
+W200407 08:22:45.919220 42 server/node.go:745  [n1] [n1,s1]: unable to compute metrics: no such file or directory
+I200407 08:22:45.919271 43 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W200407 08:22:45.919391 43 server/node.go:714  [n1] problem getting store descriptor for store cluster_id:62cc39e3-7015-46ac-b414-627cadd581ab node_id:1 store_id:1 : no such file or directory
+E200407 08:22:45.943111 153 server/status/recorder.go:462  [n1,summaries] Could not record status summaries: Store 1 could not return descriptor, error: no such file or directory
+I200407 08:22:46.569310 47 server/status/runtime.go:498  [n1] runtime stats: 213 MiB RSS, 142 goroutines, 132 MiB/116 MiB/187 MiB GO alloc/idle/total, 60 MiB/69 MiB CGO alloc/total, 30.1 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 2.7 MiB/166 KiB (r/w)net
+E200407 08:22:50.899323 134 util/log/crash_reporting.go:537  [n1,s1,r1/1:/{Min-System/NodeL…}] Reported as error 49b2782772a6461bb6b15f43a016d6b1
+F200407 08:22:50.899336 134 storage/store_raft.go:506  [n1,s1,r1/1:/{Min-System/NodeL…}] while committing batch: IO error: No such file or directoryWhile open a file for appending: /Users/waititu/goproj/cockroach-data/000009.sst: No such file or directory
+while committing batch
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleRaftReadyRaftMuLocked
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:702
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleRaftReady
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:434
+github.com/cockroachdb/cockroach/pkg/storage.(*Store).processReady
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/store_raft.go:505
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).worker
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:227
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).Start.func2
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:161
+github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunWorker.func1
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:196
+runtime.goexit
+	/usr/local/go/src/runtime/asm_amd64.s:1337
+goroutine 134 [running]:
+github.com/cockroachdb/cockroach/pkg/util/log.getStacks(0xc0004dc100, 0xc0004dc180, 0x0, 0xc0061400d0)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/clog.go:1017 +0xb1
+github.com/cockroachdb/cockroach/pkg/util/log.(*loggingT).outputLogEntry(0xa8a8340, 0xc000000004, 0xa2d7770, 0x15, 0x1fa, 0xc0002e2f00, 0x485)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/clog.go:871 +0x95b
+github.com/cockroachdb/cockroach/pkg/util/log.addStructured(0x815b1a0, 0xc0069fc1e0, 0xc000000004, 0x3, 0x77d1c00, 0x7, 0xc006185d18, 0x2, 0x2)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/structured.go:66 +0x2cc
+github.com/cockroachdb/cockroach/pkg/util/log.logDepth(0x815b1a0, 0xc0069fc1e0, 0x2, 0xc000000004, 0x77d1c00, 0x7, 0xc006185d18, 0x2, 0x2)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/log.go:69 +0x8c
+github.com/cockroachdb/cockroach/pkg/util/log.FatalfDepth(...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/log.go:199
+github.com/cockroachdb/cockroach/pkg/storage.maybeFatalOnRaftReadyErr(0x815b1a0, 0xc0069fc1e0, 0x77fcab7, 0x16, 0x80e6ae0, 0xc0004b4960, 0x0)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:859 +0x1de
+github.com/cockroachdb/cockroach/pkg/storage.(*Store).processReady(0xc0000e5800, 0x815b1a0, 0xc000cc1110, 0x1)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/store_raft.go:506 +0x1ac
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).worker(0xc000876600, 0x815b1a0, 0xc000cc1110)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:227 +0x252
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).Start.func2(0x815b1a0, 0xc000cc1110)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:161 +0x3e
+github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunWorker.func1(0xc0002d44d0, 0xc000b10f30, 0xc0002d44c0)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:196 +0xfb
+created by github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunWorker
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:189 +0xa8
+
+
+****************************************************************************
+
+This node experienced a fatal error (printed above), and as a result the
+process is terminating.
+
+Fatal errors can occur due to faulty hardware (disks, memory, clocks) or a
+problem in CockroachDB. With your help, the support team at Cockroach Labs
+will try to determine the root cause, recommend next steps, and we can
+improve CockroachDB based on your report.
+
+Please submit a crash report by following the instructions here:
+
+    https://github.com/cockroachdb/cockroach/issues/new/choose
+
+If you would rather not post publicly, please contact us directly at:
+
+    support@cockroachlabs.com
+
+The Cockroach Labs team appreciates your feedback.

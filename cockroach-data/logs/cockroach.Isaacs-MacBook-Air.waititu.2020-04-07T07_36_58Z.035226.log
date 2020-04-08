@@ -1,0 +1,135 @@
+I200407 07:36:58.832259 1 util/log/clog.go:1196  [config] file created at: 2020/04/07 07:36:58
+I200407 07:36:58.832259 1 util/log/clog.go:1196  [config] running on machine: Isaacs-MacBook-Air
+I200407 07:36:58.832259 1 util/log/clog.go:1196  [config] binary: CockroachDB CCL v19.2.4 (x86_64-apple-darwin14, built 2020/02/06 21:49:44, go1.12.12)
+I200407 07:36:58.832259 1 util/log/clog.go:1196  [config] arguments: [cockroach start --insecure]
+I200407 07:36:58.832259 1 util/log/clog.go:1196  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I200407 07:36:58.832258 1 cli/start.go:1144  logging to directory /Users/waititu/goproj/cockroach-data/logs
+W200407 07:36:58.832892 1 cli/start.go:1182  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.2/secure-a-cluster.html
+W200407 07:36:58.833126 1 cli/start.go:1052  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (2.0 GiB).
+W200407 07:36:58.833209 1 cli/start.go:1065  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (2.0 GiB).
+I200407 07:36:58.833389 1 cli/start.go:1196  CockroachDB CCL v19.2.4 (x86_64-apple-darwin14, built 2020/02/06 21:49:44, go1.12.12)
+W200407 07:36:58.934178 1 cli/start.go:511  running 'cockroach start' without --join is deprecated.
+Consider using 'cockroach start-single-node' or 'cockroach init' instead.
+I200407 07:36:58.935695 1 server/config.go:394  system total memory: 8.0 GiB
+I200407 07:36:58.935787 1 server/config.go:396  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I200407 07:36:58.935888 1 cli/start.go:1037  process identity: uid 501 euid 501 gid 20 egid 20
+I200407 07:36:58.938223 1 cli/start.go:644  starting cockroach node
+I200407 07:36:59.114280 8 storage/engine/rocksdb.go:622  opening rocksdb instance at "/Users/waititu/goproj/cockroach-data/cockroach-temp710588337"
+I200407 07:36:59.154181 8 server/server.go:928  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+W200407 07:36:59.155610 8 server/config_unix.go:112  soft open file descriptor limit 10240 is under the recommended limit 15000; this may decrease performance
+please see https://www.cockroachlabs.com/docs/v19.2/recommended-production-settings.html for more details
+I200407 07:36:59.155869 8 storage/engine/rocksdb.go:622  opening rocksdb instance at "/Users/waititu/goproj/cockroach-data"
+I200407 07:36:59.168773 8 server/config.go:502  [n?] 1 storage engine initialized
+I200407 07:36:59.168787 8 server/config.go:505  [n?] RocksDB cache size: 128 MiB
+I200407 07:36:59.168793 8 server/config.go:505  [n?] store 0: RocksDB, max size 0 B, max open file limit 9984
+I200407 07:36:59.169880 8 server/server.go:1386  [n?] no stores bootstrapped and --join flag specified, awaiting init command or join with an already initialized node.
+I200407 07:36:59.169922 8 server/server.go:1396  [n?] **** add additional nodes by specifying --join=Isaacs-MacBook-Air.local:26257
+W200407 07:36:59.170095 94 cli/start.go:996  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "Isaacs-MacBook-Air.local" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I200407 07:36:59.235483 8 server/node.go:326  [n?] **** cluster 62cc39e3-7015-46ac-b414-627cadd581ab has been created
+I200407 07:36:59.236034 8 gossip/gossip.go:394  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"Isaacs-MacBook-Air.local:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:2 patch:0 unstable:0 > build_tag:"v19.2.4" started_at:1586245019235745000 cluster_name:"" sql_address:<network_field:"tcp" address_field:"Isaacs-MacBook-Air.local:26257" > 
+W200407 07:36:59.251961 136 storage/store.go:1530  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I200407 07:36:59.252816 8 server/node.go:431  [n1] initialized store [n1,s1]: disk (capacity=113 GiB, available=12 GiB, used=72 KiB, logicalBytes=11 KiB), ranges=24, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=166.00 pMax=9955.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I200407 07:36:59.252909 8 storage/stores.go:240  [n1] read 0 node addresses from persistent storage
+I200407 07:36:59.253007 8 server/node.go:645  [n1] connecting to gossip network to verify cluster ID...
+I200407 07:36:59.253024 8 server/node.go:665  [n1] node connected via gossip and verified as part of cluster "62cc39e3-7015-46ac-b414-627cadd581ab"
+I200407 07:36:59.253108 8 server/node.go:512  [n1] node=1: started with [<no-attributes>=/Users/waititu/goproj/cockroach-data] engine(s) and attributes []
+I200407 07:36:59.253569 8 server/server.go:1514  [n1] starting http server at [::]:8080 (use: Isaacs-MacBook-Air.local:8080)
+I200407 07:36:59.253595 8 server/server.go:1521  [n1] starting grpc/postgres server at [::]:26257
+I200407 07:36:59.253617 8 server/server.go:1522  [n1] advertising CockroachDB node at Isaacs-MacBook-Air.local:26257
+W200407 07:36:59.298573 136 storage/store.go:1530  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I200407 07:36:59.353106 198 sql/event_log.go:130  [n1,intExec=optInToDiagnosticsStatReporting] Event: "set_cluster_setting", target: 0, info: {SettingName:diagnostics.reporting.enabled Value:true User:root}
+I200407 07:36:59.366052 276 sql/event_log.go:130  [n1,intExec=set-setting] Event: "set_cluster_setting", target: 0, info: {SettingName:version Value:19.2 User:root}
+I200407 07:36:59.375052 329 sql/event_log.go:130  [n1,intExec=disableNetTrace] Event: "set_cluster_setting", target: 0, info: {SettingName:trace.debug.enable Value:false User:root}
+I200407 07:36:59.405119 584 sql/event_log.go:130  [n1,intExec=initializeClusterSecret] Event: "set_cluster_setting", target: 0, info: {SettingName:cluster.secret Value:59caf0be-dab3-4d3a-a3e1-6230e12fa38f User:root}
+I200407 07:36:59.416103 590 sql/event_log.go:130  [n1,intExec=create-default-db] Event: "create_database", target: 50, info: {DatabaseName:defaultdb Statement:CREATE DATABASE IF NOT EXISTS defaultdb User:root}
+I200407 07:36:59.425128 598 sql/event_log.go:130  [n1,intExec=create-default-db] Event: "create_database", target: 51, info: {DatabaseName:postgres Statement:CREATE DATABASE IF NOT EXISTS postgres User:root}
+I200407 07:36:59.458455 8 server/server.go:1590  [n1] done ensuring all necessary migrations have run
+I200407 07:36:59.458514 8 server/server.go:1841  [n1] serving sql connections
+I200407 07:36:59.458640 8 cli/start.go:803  [config] clusterID: 62cc39e3-7015-46ac-b414-627cadd581ab
+I200407 07:36:59.458689 8 cli/start.go:812  node startup completed:
+CockroachDB node starting at 2020-04-07 07:36:59.458539 +0000 UTC (took 0.6s)
+build:               CCL v19.2.4 @ 2020/02/06 21:49:44 (go1.12.12)
+webui:               http://Isaacs-MacBook-Air.local:8080
+sql:                 postgresql://root@Isaacs-MacBook-Air.local:26257?sslmode=disable
+RPC client flags:    cockroach <client cmd> --host=Isaacs-MacBook-Air.local:26257 --insecure
+logs:                /Users/waititu/goproj/cockroach-data/logs
+temp dir:            /Users/waititu/goproj/cockroach-data/cockroach-temp710588337
+external I/O path:   /Users/waititu/goproj/cockroach-data/extern
+store[0]:            path=/Users/waititu/goproj/cockroach-data
+status:              initialized new cluster
+clusterID:           62cc39e3-7015-46ac-b414-627cadd581ab
+nodeID:              1
+I200407 07:36:59.466857 781 server/server_update.go:53  [n1] no need to upgrade, cluster already at the newest version
+I200407 07:36:59.472741 783 sql/event_log.go:130  [n1] Event: "node_join", target: 1, info: {Descriptor:{NodeID:1 Address:Isaacs-MacBook-Air.local:26257 Attrs: Locality: ServerVersion:19.2 BuildTag:v19.2.4 StartedAt:1586245019235745000 LocalityAddress:[] ClusterName: SQLAddress:Isaacs-MacBook-Air.local:26257} ClusterID:62cc39e3-7015-46ac-b414-627cadd581ab StartedAt:1586245019235745000 LastUp:1586245019235745000}
+I200407 07:37:01.155734 92 gossip/gossip.go:1531  [n1] node has connected to cluster via gossip
+I200407 07:37:01.155967 92 storage/stores.go:259  [n1] wrote 0 node addresses to persistent storage
+I200407 07:37:01.297723 785 server/updates.go:267  [n1] A new version is available: 19.2.5, details: https://www.cockroachlabs.com/docs/releases/v19.2.5.html
+I200407 07:37:03.285138 988 storage/replica_consistency.go:229  [n1,consistencyChecker,s1,r4/1:/System{/tsd-tse}] triggering stats recomputation to resolve delta of {ContainsEstimates:true LastUpdateNanos:1586245019310754000 IntentAge:0 GCBytesAge:0 LiveBytes:-33506 LiveCount:-664 KeyBytes:-32119 KeyCount:-664 ValBytes:-1387 ValCount:-664 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0}
+W200407 07:37:09.257762 144 server/status/runtime.go:420  [n1] unable to get file descriptor usage (will not try again): not implemented on darwin
+I200407 07:37:09.271858 144 server/status/runtime.go:498  [n1] runtime stats: 78 MiB RSS, 141 goroutines, 93 MiB/30 MiB/135 MiB GO alloc/idle/total, 13 MiB/20 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (10x), 96 KiB/94 KiB (r/w)net
+I200407 07:37:19.259974 97 storage/store.go:2364  [n1,s1] sstables (read amplification = 0):
+I200407 07:37:19.260292 97 storage/store.go:2365  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uptime(secs): 20.1 total, 20.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200407 07:37:19.273699 144 server/status/runtime.go:498  [n1] runtime stats: 88 MiB RSS, 141 goroutines, 102 MiB/22 MiB/135 MiB GO alloc/idle/total, 13 MiB/20 MiB CGO alloc/total, 96.0 CGO/sec, 1.2/0.8 %(u/s)time, 0.0 %gc (0x), 80 KiB/79 KiB (r/w)net
+I200407 07:37:29.273451 144 server/status/runtime.go:498  [n1] runtime stats: 96 MiB RSS, 141 goroutines, 109 MiB/14 MiB/135 MiB GO alloc/idle/total, 14 MiB/20 MiB CGO alloc/total, 65.6 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 76 KiB/75 KiB (r/w)net
+I200407 07:37:39.277303 144 server/status/runtime.go:498  [n1] runtime stats: 124 MiB RSS, 148 goroutines, 120 MiB/62 MiB/190 MiB GO alloc/idle/total, 14 MiB/20 MiB CGO alloc/total, 26.1 CGO/sec, 2.5/0.9 %(u/s)time, 0.0 %gc (1x), 6.0 MiB/5.9 MiB (r/w)net
+I200407 07:37:49.274900 144 server/status/runtime.go:498  [n1] runtime stats: 124 MiB RSS, 148 goroutines, 128 MiB/54 MiB/197 MiB GO alloc/idle/total, 14 MiB/20 MiB CGO alloc/total, 32.1 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 160 KiB/124 KiB (r/w)net
+I200407 07:37:59.257865 146 gossip/gossip.go:566  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+I200407 07:37:59.277337 144 server/status/runtime.go:498  [n1] runtime stats: 128 MiB RSS, 149 goroutines, 137 MiB/47 MiB/201 MiB GO alloc/idle/total, 14 MiB/20 MiB CGO alloc/total, 26.9 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 108 KiB/108 KiB (r/w)net
+I200407 07:38:01.235241 1 cli/start.go:865  received signal 'interrupt'
+I200407 07:38:01.264169 1 cli/start.go:930  initiating graceful shutdown of server
+I200407 07:38:01.287914 1865 util/stop/stopper.go:542  [server drain process] quiescing; tasks left:
+1      [async] intent_resolver_ir_batcher
+1      [async] intent_resolver_gc_batcher
+1      [async] closedts-rangefeed-subscriber
+I200407 07:38:01.299708 1865 util/stop/stopper.go:542  [server drain process] quiescing; tasks left:
+1      [async] closedts-rangefeed-subscriber
+I200407 07:38:01.315320 1865 storage/engine/rocksdb.go:762  closing rocksdb instance at "/Users/waititu/goproj/cockroach-data/cockroach-temp710588337"
+I200407 07:38:01.405874 1865 storage/engine/rocksdb.go:762  closing rocksdb instance at "/Users/waititu/goproj/cockroach-data"
+I200407 07:38:01.461849 1 cli/start.go:976  server drained and shutdown completed
+E200407 07:38:01.474386 1 cli/error.go:233  interrupted
